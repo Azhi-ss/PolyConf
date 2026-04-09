@@ -15,17 +15,24 @@ PolyConf achieves state-of-the-art performance in polymer conformation generatio
 ```
 polyconf/            - Main models, datas, losses, tasks
 thirdparty/          - Third-party code (openfold)
-data/               - Data processing
-  ├── molecular/    - Molecular processing (chemical, protein)
-  ├── geometry/     - Geometry processing (SO3, SE3, R3 diffusion)
-  └── protein/     - Protein processing
+data/                - Data processing
+  ├── molecular/     - Molecular processing (chemical, protein)
+  ├── geometry/      - Geometry processing (SO3, SE3, R3 diffusion)
+  └── protein/       - Protein processing
 diffusion/           - Diffusion model
-scripts/            - Training/inference scripts
-tests/              - Unit tests
-configs/            - Configuration files
+scripts/             - Training/inference scripts
+tests/               - Unit tests
+configs/             - Configuration files
+utils/               - Utility functions
 ```
 
-## Environment
+## Environment Requirements
+
+- Python >= 3.10
+- CUDA >= 11.8
+- GPU with >= 16GB VRAM (recommended for training)
+
+## Environment Setup
 
 ```bash
 pip install -r requirements.min.txt
@@ -33,7 +40,7 @@ pip install -r requirements.min.txt
 
 ## Dataset
 
-The processed dataset has been provided in this [link](https://drive.google.com/file/d/1Z51iJy2EQEGK1KVxR3KgHZQNjBBpf75T/view?usp=drive_link). Please download this dataset and organize the `./dataset` directory as follows:
+Download the processed dataset from this [link](https://drive.google.com/file/d/1Z51iJy2EQEGK1KVxR3KgHZQNjBBpf75T/view?usp=drive_link) and organize the `./dataset` directory as follows:
 
 ```
 dataset/
@@ -42,19 +49,31 @@ dataset/
 ├── test.lmdb
 ├── valid.lmdb
 ├── train.lmdb
-├── test_data_index.csv
+└── test_data_index.csv
+```
+
+## Model Weights
+
+Download the pretrained weights from this [link](https://drive.google.com/file/d/1FXUOUEcjdJLC68SCpnYMcrzGzOAK7sa6/view?usp=drive_link) and set up as follows:
+
+```bash
+# Create checkpoint directory
+mkdir -p phase2_ckpt
+
+# Place the downloaded weight file and rename it
+mv <downloaded_weight.pt> phase2_ckpt/checkpoint_best.pt
 ```
 
 ## Training
 
-Our model weight has been provided in this [link](https://drive.google.com/file/d/1FXUOUEcjdJLC68SCpnYMcrzGzOAK7sa6/view?usp=drive_link). If using ours, please place it in the `./phase2_ckpt` folder and rename it to `checkpoint_best.pt`.
-
-Of course, you can also train from scratch by running the following scripts:
+You can train from scratch using the following scripts:
 
 ```bash
 bash scripts/train_phase1.sh
 bash scripts/train_phase2.sh
 ```
+
+Or use our pretrained weights (see above).
 
 ## Inference
 
