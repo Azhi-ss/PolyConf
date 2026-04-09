@@ -11,7 +11,7 @@ from tqdm import tqdm
 from rdkit import Chem
 from copy import deepcopy
 from rdkit.Chem import rdchem
-from openfold.utils.rigid_utils import Rigid
+from thirdparty.openfold.utils.rigid_utils import Rigid
 
 
 def process_monomer(monomer_smiles):

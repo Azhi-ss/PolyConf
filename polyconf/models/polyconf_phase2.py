@@ -28,11 +28,11 @@ from functools import partial
 import scipy.stats as stats
 from scipy.spatial import distance_matrix
 import functools as fn
-from data import utils as du
-from data import se3_diffuser
+from data.protein import utils as du
+from data.geometry import se3_diffuser
 from .ipa_pytorch import IpaScore
-from openfold.utils import rigid_utils as ru
-from openfold.utils.rigid_utils import Rotation, Rigid
+from thirdparty.openfold.utils import rigid_utils as ru
+from thirdparty.openfold.utils.rigid_utils import Rotation, Rigid
 from utils.utils import get_mar_diff_model
 
 logger = logging.getLogger(__name__)

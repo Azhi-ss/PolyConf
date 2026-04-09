@@ -8,8 +8,8 @@ import math
 from scipy.stats import truncnorm
 import torch.nn as nn
 from typing import Optional, Callable, List, Sequence
-from openfold.utils.rigid_utils import Rigid
-from data import all_atom
+from thirdparty.openfold.utils.rigid_utils import Rigid
+from data.protein import all_atom
 
 
 def rot2trans(rigids, input_coord, key_point_index):

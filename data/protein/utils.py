@@ -6,11 +6,11 @@ from typing import List, Dict, Any
 import collections
 from omegaconf import OmegaConf
 import dataclasses
-from data import chemical
-from data import residue_constants
-from data import protein
-from data import so3_utils
-from openfold.utils import rigid_utils
+from data.molecular import chemical
+from data.protein import residue_constants
+from data.molecular import protein
+from data.geometry import so3_utils
+from thirdparty.openfold.utils import rigid_utils
 from scipy.spatial.transform import Rotation
 from Bio import PDB
 from Bio.PDB.Chain import Chain

@@ -19,8 +19,8 @@ import pandas as pd
 from Bio.PDB import PDBIO, MMCIFParser
 from tqdm import tqdm
 
-from data import errors, mmcif_parsing, parsers
-from data import utils as du
+from data.protein import errors, mmcif_parsing, parsers
+from data.protein import utils as du
 
 # Define the parser
 parser = argparse.ArgumentParser(

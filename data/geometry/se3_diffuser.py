@@ -1,10 +1,8 @@
 """SE(3) diffusion methods."""
 import numpy as np
-from data import so3_diffuser
-from data import r3_diffuser
-from scipy.spatial.transform import Rotation
-from openfold.utils import rigid_utils as ru
-from data import utils as du
+from data.geometry import so3_diffuser
+from data.geometry import r3_diffuser
+from data.protein import utils as du
 import torch
 import logging
 

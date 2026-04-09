@@ -32,29 +32,29 @@ class TestOpenFoldModules(unittest.TestCase):
     """openfold 核心模块测试"""
 
     def test_rigid_utils_import(self):
-        from openfold.utils import rigid_utils
+        from thirdparty.openfold.utils import rigid_utils
         self.assertIsNotNone(rigid_utils)
-        print("[PASS] openfold.utils.rigid_utils")
+        print("[PASS] thirdparty.openfold.utils.rigid_utils")
 
     def test_tensor_utils_import(self):
-        from openfold.utils import tensor_utils
+        from thirdparty.openfold.utils import tensor_utils
         self.assertIsNotNone(tensor_utils)
-        print("[PASS] openfold.utils.tensor_utils")
+        print("[PASS] thirdparty.openfold.utils.tensor_utils")
 
     def test_residue_constants_import(self):
-        from openfold.np import residue_constants
+        from thirdparty.openfold.np import residue_constants
         self.assertIsNotNone(residue_constants)
-        print("[PASS] openfold.np.residue_constants")
+        print("[PASS] thirdparty.openfold.np.residue_constants")
 
     def test_rigid_rotation_creation(self):
-        from openfold.utils.rigid_utils import Rotation
+        from thirdparty.openfold.utils.rigid_utils import Rotation
         rot = Rotation.identity(shape=(3,), device='cpu')
         self.assertIsNotNone(rot)
         self.assertEqual(rot.shape, (3,))
         print(f"[PASS] Rotation shape: {rot.shape}")
 
     def test_rigid_rigid_creation(self):
-        from openfold.utils.rigid_utils import Rigid, Rotation
+        from thirdparty.openfold.utils.rigid_utils import Rigid, Rotation
         rot = Rotation.identity(shape=(3,), device='cpu')
         trans = torch.zeros(3, 3)
         rigid = Rigid(rot, trans)
@@ -66,14 +66,14 @@ class TestDataModules(unittest.TestCase):
     """data 目录核心模块测试"""
 
     def test_chemical_import(self):
-        from data import chemical
+        from data.molecular import chemical
         self.assertIsNotNone(chemical)
-        print("[PASS] data.chemical")
+        print("[PASS] data.molecular.chemical")
 
     def test_so3_utils_import(self):
-        from data import so3_utils
+        from data.geometry import so3_utils
         self.assertIsNotNone(so3_utils)
-        print("[PASS] data.so3_utils")
+        print("[PASS] data.geometry.so3_utils")
 
 
 class TestTorchFunctionality(unittest.TestCase):

@@ -9,9 +9,9 @@ import numpy as np
 from easydict import EasyDict
 from functools import lru_cache
 from unicore.data import BaseWrapperDataset
-from openfold.utils import rigid_utils
-from openfold.utils.rigid_utils import Rotation, Rigid
-from data import se3_diffuser
+from thirdparty.openfold.utils import rigid_utils
+from thirdparty.openfold.utils.rigid_utils import Rotation, Rigid
+from data.geometry import se3_diffuser
 from copy import deepcopy
 
 

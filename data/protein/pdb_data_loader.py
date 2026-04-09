@@ -14,10 +14,10 @@ import random
 import functools as fn
 
 from torch.utils import data
-from data import utils as du
-from openfold.data import data_transforms
-from openfold.np import residue_constants
-from openfold.utils import rigid_utils
+from data.protein import utils as du
+from thirdparty.openfold.data import data_transforms
+from thirdparty.openfold.np import residue_constants
+from thirdparty.openfold.utils import rigid_utils
 
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression

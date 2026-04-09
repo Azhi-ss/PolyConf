@@ -20,9 +20,9 @@ import numpy as np
 import mdtraj as md
 
 
-from data import utils as du
-from data import errors
-from data import parsers
+from data.protein import utils as du
+from data.protein import errors
+from data.protein import parsers
 
 
 # Define the parser
