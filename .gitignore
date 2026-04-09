@@ -1,0 +1,45 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+
+# Data
+*.lmdb/
+*.lmdb/
+data/*.pkl
+data/*.pt
+
+# Model weights
+*.pth.tar
+checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary
+.p.npy
+*.tmp
